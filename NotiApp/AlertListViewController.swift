@@ -89,10 +89,9 @@ extension AlertListViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            self.alerts.remove(at: indexPath.row)
             UserDefaults.standard.set(try? PropertyListEncoder().encode(self.alerts), forKey: "alerts")
             userNotiCenter.removePendingNotificationRequests(withIdentifiers: [alerts[indexPath.row].id])
-            
+            self.alerts.remove(at: indexPath.row)
             self.tableView.reloadData()
             return
             

@@ -11,7 +11,7 @@ import UserNotifications
 extension UNUserNotificationCenter {
     func addNotiRequest(by alert: Alert){
         let content = UNMutableNotificationContent()
-        content.title = "물 마실 시간이에요💦"
+        content.title = "착짱죽짱💦"
         content.body = "시진핑핑이가 목이 마르대요"
         content.sound = .default
         content.badge = 1
